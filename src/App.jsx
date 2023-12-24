@@ -1,4 +1,6 @@
+import LeftCol from './components/LeftCol'
 import Navbar from './components/Navbar'
+import RightCol from './components/RightCol'
 import Sidebar from './components/Sidebar'
 
 function App() {
@@ -8,12 +10,14 @@ function App() {
       <Sidebar />
       <div className='flex flex-col flex-1 relative'>
         <Navbar />
-      </div>
-      <div>
-        Left Column
-      </div>
-      <div>
-        Right Column
+        <div className='grid md:grid-cols-3 grid-cols-1 w-full'>
+          <div className='col-span-2'>
+            <LeftCol />
+          </div>
+          <div className='w-full'>
+            <RightCol />
+          </div>
+        </div>
       </div>
     </main>
   )
