@@ -1,20 +1,26 @@
 import React from 'react'
 import { Card, Metric, Text, Flex, BadgeDelta } from '@tremor/react'
+import mock from '../../mockapi.json'
+
 
 const CardItem = () => {
-    return (
-        <Card
-            className='w-xs'
-            decoration='top'
-            decorationColor='indigo'
-        >
-            <Flex justifyContent='between' alignItems='center'>
-                <Text>Sales</Text>
-                <BadgeDelta deltaType={'moderateIncrease'}>+12%</BadgeDelta>
-            </Flex>
-            <Metric>$34,742</Metric>
-        </Card>
-    )
-}
+    const stocks = mock.stocks;
 
-export default CardItem
+    return (
+        <>
+            {stocks.map((stock, index) => (
+                <Card key={index} className='w-xs' decoration='top' decorationColor='indigo'>
+                    <Flex justifyContent='between' alignItems='center'>
+                        <Text>{stock.name}</Text>
+                        <BadgeDelta deltaType={stock.percentageChange >= 0 ? 'moderateIncrease' : 'moderateDecrease'}>
+                            {stock.percentageChange}%
+                        </BadgeDelta>
+                    </Flex>
+                    <Metric>{`$${stock.sentimentScore}`}</Metric>
+                </Card>
+            ))}
+        </>
+    );
+};
+
+export default CardItem;

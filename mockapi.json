@@ -1,0 +1,28 @@
+{
+    "stocks": [
+        {
+            "ticker": "AAPL",
+            "name": "Apple Inc.",
+            "sentimentScore": 0.8,
+            "percentageChange": 2.5,
+            "dividend": 1.2,
+            "docs": "https://www.nasdaq.com/market-activity/stocks/aapl"
+        },
+        {
+            "ticker": "GOOGL",
+            "name": "Alphabet Inc.",
+            "sentimentScore": 0.6,
+            "percentageChange": -1.8,
+            "dividend": 0.9,
+            "docs": "https://www.nasdaq.com/market-activity/stocks/googl"
+        },
+        {
+            "ticker": "MSFT",
+            "name": "Microsoft Corporation",
+            "sentimentScore": 0.7,
+            "percentageChange": 1.5,
+            "dividend": 1.5,
+            "docs": "https://www.nasdaq.com/market-activity/stocks/msft"
+        }
+    ]
+}
